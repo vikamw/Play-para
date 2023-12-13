@@ -123,6 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Conclusion.cpp" />
+    <ClCompile Include="Dectionary.cpp" />
+    <ClCompile Include="Filling.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Reference.cpp" />
+    <ClCompile Include="Removal.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
