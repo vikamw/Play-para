@@ -7,7 +7,7 @@
 using namespace std;
 
 void main() {
-	SetConsoleCP(1251); 
+	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
 	int seconds; // количество секунд до закрытия программы
@@ -15,8 +15,14 @@ void main() {
 	cout << "Введите сколько секунд вы хотите играть: ";
 	cin >> seconds;
 
-	// Задержка в выполнении программы
-	this_thread::sleep_for(chrono::seconds(seconds));
+	for (int i = 0; i < seconds; i++) {
+		// Задержка в выполнении программы
+		this_thread::sleep_for(chrono::seconds(1));
+
+		// Очисшение меню консоли
+		system("cls");
+		cout << seconds - i << endl;
+	}
 
 	cout << "Таймер истек. Программа будет закрыта." << endl;
 
