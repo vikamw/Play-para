@@ -2,10 +2,14 @@
 #include <thread>
 #include <chrono>
 #include <cstdlib>
+#include <Windows.h>
 
 using namespace std;
 
 void main() {
+	SetConsoleCP(1251); 
+	SetConsoleOutputCP(1251);
+
 	int seconds; // количество секунд до закрыти€ программы
 
 	cout << "¬ведите сколько секунд вы хотите играть: ";
