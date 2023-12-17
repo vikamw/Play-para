@@ -1,9 +1,60 @@
-// Если адреса на которые указал пользователь совподают, то удаляет их из Reference
+#include <iostream>
+using namespace std;
 
-/*	ПРИНИМАЕТ:
-2 числа из Input
-*/
+int main() {
+    setlocale(LC_ALL, "rus");
 
-/*	ВЫВОДЕТ:
-удаляет адресса из Reference
-*/
+    const int rows = 5;
+    const int cols = 2;
+
+    int matrix[rows][cols] = {
+        {1, 3},
+        {2, 5},
+        {4, 1},
+        {5, 4},
+        {3, 2}
+    };
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "Р’РІРµРґРёС‚Рµ РґРІР° С‡РёСЃР»Р°: ";
+    int num1, num2;
+    cin >> num1 >> num2;
+    num1--;
+    num2--;
+
+    bool found = false;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < rows; j++)
+        {
+            if (num1 == i && num2 == j && matrix[i][0] == matrix[j][1]) {
+                matrix[i][0] = 0;
+                matrix[j][1] = 0;
+                found = true;
+                break;
+            }
+        }
+    }
+
+    if (found) {
+        cout << "Р—РЅР°С‡РµРЅРёСЏ РїРѕРґ СѓРєР°Р·Р°РЅРЅС‹РјРё РёРЅРґРµРєСЃР°РјРё СЃРѕРІРїР°РґР°СЋС‚ Рё Р±С‹Р»Рё Р·Р°РјРµРЅРµРЅС‹ РЅР° 0." << endl;
+    }
+    else {
+        cout << "РЎРѕРІРїР°РґРµРЅРёР№ РЅРµ РЅР°Р№РґРµРЅРѕ." << endl;
+    }
+
+    cout << "РћР±РЅРѕРІР»РµРЅРЅС‹Р№ РјР°СЃСЃРёРІ:" << endl;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
